@@ -8,7 +8,7 @@ for i in 0 1 2 3; do
 	mkdir -p $LOGDIR
 
 	CUDA_VISIBLE_DEVICES=$i python3 train.py \
-	  --logdir $LOGDIR \
+	  --logdir $LOGDIR --seed $i \
 	  --configs dmc_proprio --task ${TASK} 2>&1 > $LOGDIR/out.txt &
 done
 
